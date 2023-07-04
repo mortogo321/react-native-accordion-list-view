@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ViewStyle } from 'react-native';
 export interface AccordionItemProps {
     /**
@@ -27,6 +28,7 @@ export interface AccordionItemProps {
      *  default value is false
      */
     isRTL?: boolean;
+    isUTD?: boolean;
     /**
      *  An optional param to make accordion item already open
      *  default value is false

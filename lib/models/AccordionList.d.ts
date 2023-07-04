@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { FlatListProps, ViewStyle } from 'react-native';
 export interface AccordionListProps extends Omit<FlatListProps<any>, 'data' | 'renderItem'> {
     /**
