@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FlatList } from 'react-native';
-import AccordionItem from '../AccordionItem';
 import { AccordionListProps } from '../../models/AccordionList';
+import AccordionItem from '../AccordionItem';
 
 const AccordionList = ({
   data,
@@ -11,6 +11,7 @@ const AccordionList = ({
   containerItemStyle = {},
   animationDuration = 300,
   isRTL = false,
+  isUTD = false,
   expandMultiple = false,
   ...props
 }: AccordionListProps) => {
@@ -23,6 +24,7 @@ const AccordionList = ({
       customIcon={customIcon}
       animationDuration={animationDuration}
       isRTL={isRTL}
+      isUTD={isUTD}
       isOpen={JSON.stringify(currentlyOpen) === JSON.stringify(item)}
       onPress={(status) => {
         if (status && !expandMultiple) {

@@ -28,6 +28,7 @@ export interface AccordionItemProps {
    *  default value is false
    */
   isRTL?: boolean;
+  isUTD?: boolean;
   /**
    *  An optional param to make accordion item already open
    *  default value is false

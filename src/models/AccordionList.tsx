@@ -33,7 +33,7 @@ export interface AccordionListProps extends Omit<FlatListProps<any>, 'data' | 'r
    *  default value is false
    */
   isRTL?: boolean;
-
+  isUTD?: boolean;
   /**
    * Allow more than one section to be expanded.
    * default value is false

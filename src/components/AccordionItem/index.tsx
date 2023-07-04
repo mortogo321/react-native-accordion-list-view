@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Animated, LayoutAnimation, I18nManager, Pressable } from 'react-native';
+import { Animated, I18nManager, LayoutAnimation, Pressable, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { toggleAnimation } from '../../animations/toggleAnimation';
 import { AccordionItemProps } from '../../models/AccordionItem';
@@ -12,6 +12,7 @@ const AccordionItem = ({
   containerStyle = {},
   animationDuration = 300,
   isRTL = false,
+  isUTD = false,
   isOpen = false,
   onPress = undefined,
 }: AccordionItemProps) => {
@@ -34,9 +35,11 @@ const AccordionItem = ({
     if (onPress) onPress(!showContent);
     setShowContent(!showContent);
   };
+  
+  const angle = isUTD ? 180 : 90;
   const arrowTransform = animationController.interpolate({
     inputRange: [0, 1],
-    outputRange: ['0deg', isRTL ? '-90deg' : '90deg'],
+    outputRange: ['0deg', isRTL ? `-${angle}deg` : `${angle}deg`],
   });
   return (
     <View style={[styles.container, containerStyle]}>
